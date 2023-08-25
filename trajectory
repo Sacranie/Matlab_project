@@ -1,0 +1,51 @@
+legR2 = translateShape(legR, 30, 0);
+fillshape(leg2, 'b')
+fillshape(legR2,'b')
+Apple= [32.5,37.5,37.5,32.5,32.5; 1.4,1.4,1,1,1.4];
+fillshape(Apple, 'r')
+plot(-2,4, '.y', 'MarkerSize',100)
+[x,y,~] = ginput(1); %This finds the coordinates of the pointer
+    shape1 = translateShape(shape, x ,y); %This gives the coordinates of the final position of the ball
+    for x1 = 0: power/2.5: shape1(1,1) %This helps to get a range of values of x in order to show the translation of the ball from the inital to the final postion. The larger the power the less coordinates and so the quicker the ball is to move to the final position
+        y1 = (shape1(2,1)/shape1(1,1))*x1;
+        %Everything from this point onwards also gives the background
+        %image. This is importantt else the image will be lost and you will
+        %only have the motion of the ball
+fillshape (sky, [0.3010, 0.7450, 0.9330])
+hold on
+fillshape(face, [255/256, 173/256, 96/256])
+fillshape(grass, 'g')
+axis ([-10 40 -2 5])
+fillshape(body,[0,0,0])
+fillshape(arm, [255/256, 173/256, 96/256])
+fillshape(armL, [255/256, 173/256, 96/256])
+fillshape(leg, 'b')
+fillshape(legR, 'b')
+fillshape (body2, [0,0,0])
+fillshape(face2, [255/256, 173/256, 96/256])
+fillshape(leg2, 'b')
+fillshape(legR2,'b')
+fillshape(Apple, 'r')
+plot(-2,4, '.y', 'MarkerSize',100)
+%The next pieces of code is responsible for drawing the ball at differnt
+%positons as it travels towards ts final destiation to get an animation
+        NEW =translateShape(shape, x1, y1);
+        
+        fillshape(NEW, 'y')
+        hold off
+        axis([-10 40 -2 5])
+        axis square
+        drawnow
+    end
+    %This if statement is responsible for displaying a messgae depending on
+    %whether the user has hit the apple or  not
+    if ((32.5<shape1(1,1) && shape1(1,1)<37.5)  || (32.5<shape1(1,2) && shape1(1,2)<37.5)) && ((1<shape1(2,1) && shape1(2,1)<1.4)  || (1<shape1(2,3) && shape1(2,3)<1.4))
+        message = 'Well done you hit the apple!'
+    else
+        message = 'Oh no! You did not hit the apple.'
+    end
+    msgbox(message)
+
+
+end
+    

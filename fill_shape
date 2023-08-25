@@ -1,0 +1,5 @@
+function fillshape(shape1, col)
+fill(shape1(1,:),shape1(2,:), col)
+end
+
+#This is just a function defined to fill the shape 

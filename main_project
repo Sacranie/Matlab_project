@@ -1,0 +1,5 @@
+ball = [0.25,2.25,2.25,0.25,0.25; 0.1, 0.1, -0.1, -0.1, 0.1]; %This gives the starting position of the ball whch is in the hand of the person;
+axis([-10 40 -2 5])% This ensures that the axis is correct so you can see the entire image
+power = input('What is the power of your throw from 1-10?'); %This asks the user to input aa power level. The higher the power the faster hte ball travels;;
+trajectory (ball, power) %This function helps to keep the code much neater. It uses both the ball and power level to give the motion of the ball as it hits where the user has targetted
+#This uses all the functions to create the simulation
